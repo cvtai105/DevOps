@@ -14,9 +14,17 @@
 - Build, Push image lên container registry
 - Pull image và chạy docker compose.
 
-# Tại sao không pull code, test, build và triển khai ngay trên máy chủ?
+_công việc này lặp đi lặp lại nhiều lần nên cần được automate bằng CICD_
+
+# CICD với github actions
+- Các công việc như test, build và push image sẽ được thực hiện ở github actions server
+- sau đó git server sẽ kết nối tới virtual machine để pull và chạy image mới nhất
+
+# Tại sao không pull code, test, build và triển khai ngay trên Virtual machine?
 - Test, build tốn thời gian và tài nguyên, ảnh hưởng tới tính availability của ứng dụng
 - Source code cần bảo mật
 - Có thể quản lý phiên bản trên registry, giúp dễ dàng rollback nếu có lỗi xảy ra
 
-### Với các ứng dụng lớn nên xem xét sử dụng k8s
+
+### Ứng dụng lớn
+_Với các ứng dụng lớn nên xem xét sử dụng k8s_
